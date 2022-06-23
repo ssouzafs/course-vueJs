@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -25,9 +26,9 @@ class UserController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
-        //
+        return response()->json($request->all());
     }
 
     /**
@@ -38,7 +39,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
