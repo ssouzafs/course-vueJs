@@ -3,6 +3,7 @@
     <router-link to="/" class="nav-item">Home</router-link>
     <router-link to="/about" class="nav-item">About</router-link>
     <router-link to="/user/create" class="nav-item">New user</router-link>
+    <router-link to="/products" class="nav-item">Products</router-link>
   </nav>
 </template>
 <script>
