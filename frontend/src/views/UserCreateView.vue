@@ -51,7 +51,7 @@ async function createUser() {
 }
 
 const fullName = computed(()=> {
-    return user.value.first_name + ' ' + user.value.last_name
+    return user.first_name + ' ' + user.last_name
 })
 </script>
 <style scoped>
