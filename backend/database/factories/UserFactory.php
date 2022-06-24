@@ -20,7 +20,7 @@ class UserFactory extends Factory
         return [
             'first_name' => $this->faker->firstName(),
             'last_name' => $this->faker->lastName(),
-            'isAdmin' =>  $this->faker->boolean(),
+            'is_admin' =>  $this->faker->boolean(),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => bcrypt('123'),
