@@ -1,10 +1,10 @@
 <template>
-  <p>Likes: {{ likes }}</p>
-  <p>Comments: {{ comments }}</p>
+  <ul>
+    <slot v-for="product in products" key="product.id" :product="product"></slot>
+  </ul>
 </template>
 <script setup>
 defineProps({
-    comments: Number,
-    likes: Number,
+  products: Object,
 });
 </script>
