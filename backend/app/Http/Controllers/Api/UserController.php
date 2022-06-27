@@ -14,10 +14,21 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::all()->take(20);
+        $users = User::paginate(10);
         return response()->json($users);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        $user = User::where('first_name', 'like', '%' . $request->user . '%')->paginate(2);
+        return response()->json($user);
     }
 
     /**
@@ -28,7 +39,7 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-        return response()->json($request->all());
+//        return response()->json($request->all());
     }
 
     /**
