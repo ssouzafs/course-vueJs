@@ -25,7 +25,7 @@
           </tr>
         </tbody>
       </table>
-      <Pagination :data="users" @pagination-change-page="resolveEventPagination" align="center">
+      <Pagination :data="users" @pagination-change-page="resolveEventPagination" align="right">
         <template #prev-nav>
           <span>&lt; &lt;</span>
         </template>
@@ -60,7 +60,7 @@ function inputFilterIsEmpty() {
 
 const filterInputDebounce = _.debounce(() => {
   getUsersByFilter();
-}, 750)
+}, 400)
 
 async function getUsersByFilter(page = 1) {
   await api.get(`/api/users?page=${page}`, {
@@ -96,6 +96,7 @@ function dateFormatBrl(date, format = 'DD/MM/YYYY h:mm:ss') {
 .container-content {
   width: 100%;
   margin: 20px;
+  padding-right: 40px
 }
 
 section.list {
