@@ -10,8 +10,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::controller(UserController::class)->group(function () {
     Route::get('/users', 'index')->name('users.index');
-    Route::get('/users/{search}', 'search')->name('users.search');
-//    Route::post('users/store', 'store')->name('users.store');
 });
-
-
