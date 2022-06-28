@@ -20,7 +20,7 @@ class UserController extends Controller
         $user = User::where("first_name", "like", "%{$request->user}%")->paginate(5);
         return response()->json($user);
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
